@@ -1,0 +1,9 @@
+# Dependencies (this tool has none of its own, but a checked-out project may)
+node_modules/
+
+# Packed tarballs from `npm pack`
+*.tgz
+
+# Logs and OS cruft
+*.log
+.DS_Store

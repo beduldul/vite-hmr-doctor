@@ -1,0 +1,42 @@
+{
+  "name": "vite-hmr-doctor",
+  "version": "0.1.0",
+  "description": "Find Vite server.hmr / server.ws configuration that Vite silently ignores.",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "vite-hmr-doctor": "bin/vite-hmr-doctor.js"
+  },
+  "exports": {
+    ".": "./src/checks.js",
+    "./resolve": "./src/resolve.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "test:fixtures": "node bin/vite-hmr-doctor.js fixtures/clean.config.js"
+  },
+  "keywords": [
+    "vite",
+    "hmr",
+    "config",
+    "lint",
+    "doctor",
+    "ws"
+  ],
+  "peerDependencies": {
+    "vite": ">=5"
+  },
+  "peerDependenciesMeta": {
+    "vite": {
+      "optional": true
+    }
+  }
+}
