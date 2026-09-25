@@ -12,6 +12,18 @@ and — in some combinations — never applies them and never says so. You write
 meaning anything. `vite-hmr-doctor` reads your Vite config and tells you which
 of those options are dead, before you spend an afternoon debugging it.
 
+## Where this came from
+
+This tool grew out of [`vitejs/vite#23578`](https://github.com/vitejs/vite/pull/23578),
+a pull request that adds a warning when `server.hmr.server` is ignored because
+`server.ws` is `false`. That PR is still open, and it was deliberately narrowed
+to `server.hmr.server` alone: its six sibling socket keys (`protocol`, `host`,
+`port`, `clientPort`, `path`, `timeout`) were dropped from it after review, on
+the reasoning that writing `server.ws: false` already means there is no socket
+to configure. A `server.ws: false` config that also sets `server.hmr.port`
+therefore still says nothing even once that PR lands. This tool checks the whole
+set, which is why it exists separately from the PR.
+
 ## The problem it detects
 
 Vite's compatibility step aliases the deprecated `server.hmr.*` options onto
