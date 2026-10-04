@@ -1,3 +1,4 @@
+[![CI](https://github.com/beduldul/vite-hmr-doctor/actions/workflows/ci.yml/badge.svg)](https://github.com/beduldul/vite-hmr-doctor/actions/workflows/ci.yml)
 # vite-hmr-doctor
 
 Find Vite `server.hmr` / `server.ws` configuration that Vite silently ignores.
